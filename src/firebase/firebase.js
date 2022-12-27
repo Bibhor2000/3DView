@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
 import firebase from 'firebase/compat/app';
 import 'firebase/database';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getStorage, ref } from "firebase/storage";
+import 'firebase/compat/storage'
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,10 +20,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase & other Variables
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const database = firebase.database();
-const storage = getStorage();
-const piranhaShip = ref(storage, 'gs://view-5a6a6.appspot.com/piranha.glb')
+if (!firebase.apps.length) {
+  firebase.initializeApp({});
+}
 
-export default {database, storage, analytics};
+export const database = firebase.database()
+export const storage = firebase.storage()
