@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, {Component} from 'react';
 import Model from './components/Model';
-import storage from './firebase/firebase';
+import {storage, database} from './firebase/firebase';
 
 function App() {
   return (
