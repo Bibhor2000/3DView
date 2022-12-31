@@ -1,0 +1,14 @@
+//steps to make the firebase storage files accessible to the model component
+setting up storage in firebase JS and exporting an assigned variable
+importing the variable into app js then setting its 
+
+//functionality for inputs that will have its value read and uploaded to the database
+
+
+//functionality for button that will upload file to cloud storage
+create a "handle" function for uploading the files
+Import ref from the firebase storage
+Assign a variable that will use the ref function & in the parenthesis pass in storage & the bucket path
+assign a variable that will use the uploadBytesResumable function
+within the function pass in the ref variable & the file
+
