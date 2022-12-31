@@ -21,20 +21,19 @@ const firebaseConfig = initializeApp ({
   measurementId: "G-SW50LTRLHN"
 });
 
-//testing push
 function Model () {
   //Firebase References
   const storage = getStorage(firebaseConfig);
   const database = getDatabase(firebaseConfig);
   const [shipRef, setShipRef] = useState();
+
   let shipLink = getDownloadURL(ref(storage, 'gs://view-5a6a6.appspot.com/egx.glb'))
   .then((url) => {
     setShipRef(url)
   })
   .catch((error) => {
   });
-
-  
+ 
   return (
     <div className='card'>
         <model-viewer
