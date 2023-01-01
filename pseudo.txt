@@ -9,6 +9,8 @@ Deleting files with Cloud Storage & built-in deleteObject function on the click 
 //Next Steps to take with only Realtime database
 Creating a function that will add names from the inputs to the database
 Adding functionality for the delete button to also delete any relevant user info from the database to the deleted model
+Add functionality to display the user's name to the correct model by hooking together info from database and cloud storage
+
 
 //functionality for inputs that will have its value read and uploaded to the database
 input tag for each, adding user's name, model, and the actual file for a total of three
