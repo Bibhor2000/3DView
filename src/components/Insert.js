@@ -22,12 +22,38 @@ const firebaseConfig = initializeApp ({
   });
 
 function Insert () {
+  //Firebase References
+  const storage = getStorage(firebaseConfig);
+  const database = getDatabase(firebaseConfig);
+  const [shipRef, setShipRef] = useState();
+
+  let shipLink = getDownloadURL(ref(storage, 'gs://view-5a6a6.appspot.com/harimau.glb'))
+  .then((url) => {
+    setShipRef(url)
+  })
+  .catch((error) => {
+  });
 
   return (
     <div>
-      <input></input>
-      <input></input>
-      <input></input>
+      <div>
+        <input></input>
+        <input></input>
+        <input></input>
+        <button></button>
+      </div>
+      <div>
+          <model-viewer
+            className='card'
+            src={`${shipRef}`}
+            ios-src=''
+            poster=''
+            alt=''
+            shadow-intensity=''
+            camera-controls
+            auto-rotate
+          ></model-viewer>
+      </div>
     </div>
   )
 
