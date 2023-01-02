@@ -34,6 +34,9 @@ function Insert () {
   .catch((error) => {
   });
 
+  let models = [];
+  // let modelList = models.map(model => <div>{model}</div>);
+
   return (
     <div>
       <div>
@@ -42,7 +45,7 @@ function Insert () {
         <input></input>
         <button></button>
       </div>
-      <div>
+      <div className='card'>
           <model-viewer
             className='card'
             src={`${shipRef}`}
@@ -52,6 +55,7 @@ function Insert () {
             shadow-intensity=''
             camera-controls
             auto-rotate
+            autoplay='true'
           ></model-viewer>
       </div>
     </div>

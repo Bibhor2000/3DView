@@ -12,19 +12,8 @@ Adding functionality for the delete button to also delete any relevant user info
 Add functionality to display the user's name to the correct model by hooking together info from database and cloud storage
 
 
-//functionality for inputs that will have its value read and uploaded to the database
-input tag for each, adding user's name, model, and the actual file for a total of three
-a "submit" button that will read the value of both the inputs containing names
-a post method to the google real-time database for the inputs containing names
+//Insert JS tasks
+create display functinality using an array method to display any inserted models in Insert JS
 
-//functionality for button that will upload file to cloud storage
-create a "handle" function for uploading the files with a "post route" to the storage
-Import ref from the firebase storage
-Assign a variable that will use the ref function & in the parenthesis pass in storage & the bucket path
-assign a variable that will use the uploadBytesResumable function
-within the function pass in the ref variable & the file
 
-//functionality for delete button on the model viewer 
-button tag that is linked to the model viewer
-an onclick function with a delete route to the model file in the cloud storage
 

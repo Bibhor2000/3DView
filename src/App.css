@@ -36,16 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+}
+
 .card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  display: flex;
-  width: 550px;
-  height: 400px;
-  margin-top: 200px;
-  margin-left: 65px;
-  background-color: gold;
-  z-index: 1;
+  margin: 3em auto;
   position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 500px;
+  height: 500px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
