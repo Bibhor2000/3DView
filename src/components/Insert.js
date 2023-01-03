@@ -31,12 +31,22 @@ function Insert () {
   const [model, setModel] = useState();
 
   useEffect(() => {
+    //Model Display Setup
+    let models = [];
+    let listRef = ref(storage, 'gs://view-5a6a6.appspot.com/uid')
+
+    listAll(listRef)
+    .then((res) => {
+      res.items.forEach((itemRef) => {
+        //All items 
+      })
+    })
+
+    console.log(listRef)
+
     getDownloadURL(ref(storage, 'gs://view-5a6a6.appspot.com/harimau.glb'))
     .then((url) => {
       setModelRef(url)
-
-      //Model Display Setup
-      let models = [];
     
       models.map((m) => {
       
@@ -57,9 +67,9 @@ function Insert () {
     });
   }, [])
 
-  console.log(modelList)
-  console.log(modelRef)
-  console.log(model)
+  // console.log(modelList)
+  // console.log(modelRef)
+  // console.log(model)
 
   return (
     <div>
