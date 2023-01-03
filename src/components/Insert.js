@@ -1,9 +1,10 @@
 import '@google/model-viewer'
 import '../App.css'
 import {firebase, initializeApp} from 'firebase/app';
-import {getDownloadURL, getStorage, ref} from 'firebase/storage';
+import {getDownloadURL, getStorage, ref, listAll} from 'firebase/storage';
 import {getDatabase} from 'firebase/database';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { ModelViewerElement } from '@google/model-viewer';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,17 +26,40 @@ function Insert () {
   //Firebase References
   const storage = getStorage(firebaseConfig);
   const database = getDatabase(firebaseConfig);
-  const [shipRef, setShipRef] = useState();
+  const [modelRef, setModelRef] = useState();
+  const [modelList, setModelList] = useState();
+  const [model, setModel] = useState();
 
-  let shipLink = getDownloadURL(ref(storage, 'gs://view-5a6a6.appspot.com/harimau.glb'))
-  .then((url) => {
-    setShipRef(url)
-  })
-  .catch((error) => {
-  });
+  useEffect(() => {
+    getDownloadURL(ref(storage, 'gs://view-5a6a6.appspot.com/harimau.glb'))
+    .then((url) => {
+      setModelRef(url)
 
-  let models = [];
-  // let modelList = models.map(model => <div>{model}</div>);
+      //Model Display Setup
+      let models = [];
+    
+      models.map((m) => {
+      
+        return (
+            <div><model-viewer
+              className='card'
+              src={`${modelRef}`}
+              camera-controls
+              auto-rotate
+              autoplay='true'
+            ></model-viewer></div>
+      )
+      });
+
+      setModelList(models)
+    })
+    .catch((error) => {
+    });
+  }, [])
+
+  console.log(modelList)
+  console.log(modelRef)
+  console.log(model)
 
   return (
     <div>
@@ -45,19 +69,7 @@ function Insert () {
         <input></input>
         <button></button>
       </div>
-      <div className='card'>
-          <model-viewer
-            className='card'
-            src={`${shipRef}`}
-            ios-src=''
-            poster=''
-            alt=''
-            shadow-intensity=''
-            camera-controls
-            auto-rotate
-            autoplay='true'
-          ></model-viewer>
-      </div>
+      <div className='card'>{modelList}</div>
     </div>
   )
 
