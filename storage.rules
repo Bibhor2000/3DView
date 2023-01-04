@@ -1,0 +1,8 @@
+rules_version = '2';
+service firebase.storage {
+    match /b/"view-5a6a6.appspot.com"/o {
+        match /{allPaths=**} {
+        allow read, write: if <some_condition>;
+    }
+    }
+}

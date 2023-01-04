@@ -18,6 +18,11 @@ create getDownload function that will grab files in the storage and push it into
 use the listAll function to list all files in the cloud to be pushed into the array
 the same getDownload function can also update real time to display any inserted models
 
+//Big Warnings
+Never set state in a loop or a forEach method
+
+//References
+https://medium.com/tinyso/how-to-create-the-responsive-and-swipeable-carousel-slider-component-in-react-99f433364aa0
 
 
 
