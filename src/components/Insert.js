@@ -23,23 +23,14 @@ const firebaseConfig = initializeApp ({
     rules_version: "2"
   });
 
-function Insert () {
-  //Firebase References
-  const storage = getStorage(firebaseConfig);
-  const database = getDatabase(firebaseConfig);
-  const [modelRef, setModelRef] = useState();
-  const [models, setModels] = useState([]);
-  const [allItems, setAllItems] = useState([]);
-  const [loaded, setLoaded] = useState(false);
-  const [display, setDisplay] = useState();
-
-  let modelArray = [];
+function Insert ({storage, database, modelRef, models, allItems, display, setDisplay, setModels, setAllItems}) {
 
   useEffect(() => {
     //Model Display Setup
     let listRef = ref(storage, 'gs://view-5a6a6.appspot.com/')
     let urlList = []
     let buttonList = []
+
     //Model Mapping Setup
     listAll(listRef)
     .then((res) => {
@@ -48,7 +39,6 @@ function Insert () {
       console.log(res.items, 'this res items')
       console.log(allItems, 'allItems array')
       res.items.forEach((itemRef) => {
-        //All items 
         // console.log(itemRef)
         getDownloadURL(ref(storage, itemRef))
         .then((url) => {
@@ -63,7 +53,7 @@ function Insert () {
       })
       console.log(urlList, 'url List')
       setModels(urlList)
-      setDisplay(models[0])
+      setDisplay(models)
     })
     // console.log(listRef)
     // setLoaded(true)
@@ -75,30 +65,24 @@ function Insert () {
   // })
   // .catch((error) => {
   // });
+  console.log('useEffect running')
 
   }, [])
 
+  const buttons = models.map((model, index) => {
+    return(
+      <button onClick={(event)=>{event.preventDefault()
+      setDisplay(models)}}>{index}</button>
+    )
+  })
+
   
-
   console.log(models, 'this is model state')
-  console.log(modelArray, 'this is the model array')
-  // const viewModel = models.map((url) => {
-  //   console.log(url)
-  //   return (
-  //   <div><model-viewer
-  //   className='card'
-  //   src={url}
-  //   camera-controls
-  //   auto-rotate
-  //   autoplay='true'
-  //   ></model-viewer></div>
-  // )
-  // })
-
   // console.log(modelList)
   // console.log(modelRef)
   // console.log(model)
-  console.log(modelArray[0])
+  console.log(display)
+
   return (
     <div>
       {/* { models.length &&  */}
@@ -107,24 +91,8 @@ function Insert () {
           <input></input>
           <input></input>
           <button></button>
-          {/* {models.map((url) => {
-    <div><model-viewer
-    className='card'
-    src={url}
-    camera-controls
-    modelCach
-    auto-rotate
-    autoplay='true'
-    ></model-viewer></div>
-  })} */}
-        {/* {viewModel} */}
         </div>
-        {/* {models.map((model, index) => {
-          return(
-            <button onClick={(event)=>{event.preventDefault()
-            setDisplay(model)}}>{index}</button>
-          )
-        })} */}
+        <div>{buttons}</div>
         <div className='card'>
         <model-viewer
         className='card'
