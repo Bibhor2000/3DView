@@ -119,12 +119,12 @@ function Insert () {
   })} */}
         {/* {viewModel} */}
         </div>
-        {models.map((model, index) => {
+        {/* {models.map((model, index) => {
           return(
             <button onClick={(event)=>{event.preventDefault()
             setDisplay(model)}}>{index}</button>
           )
-        })}
+        })} */}
         <div className='card'>
         <model-viewer
         className='card'
