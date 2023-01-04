@@ -47,12 +47,16 @@ function App() {
         .then((url) => {
           console.log(url, 'model url')
           urlList.push(url)
-          // setModels(url, ...models)
-          
+          setLoaded(true)
+          setModels(urlList)
+          setDisplay(models[0])
       })
     })
   })}
-  console.log(modelDownload)
+
+  // modelDownload()
+
+  useEffect(() => {modelDownload()}, [loaded])
 
   return (
     <div className="App">
