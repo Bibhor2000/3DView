@@ -26,103 +26,77 @@ import { ModelViewerElement } from '@google/model-viewer';
 function Insert ({storage, database, modelRef, models, allItems, display, setDisplay, setModels, setAllItems}) {
 
   console.log(models)
-  const displayList = models.map((m) => {
+  const storageRef = ref(storage, 'gs://view-5a6a6.appspot.com/')
+  const [input, setInput] = useState();
+
+  const displayList = models.map((m, index) => {
     console.log(m)
     return (
         <div>
           <div>{m}</div>
-          {/* <model-viewer
-          className='card'
-          src={`${m}`}
-          camera-controls
-          auto-rotate
-          autoplay='true'
-        ></model-viewer> */}
+          <div className='card' id={index}>
+            <model-viewer
+            // className='card'
+            src={m}
+            poster='./piranha.jpeg'
+            camera-controls
+            auto-rotate
+            autoplay='true'
+            ></model-viewer>
+          </div>
         </div>
   )
   });
 
+  // function handleUpload () {
+  //   uploadBytes(storageRef, file).then((snapshot) => {
+  //     console.log('Uploaded a blob or file!');
+  //   });
+  // }
 
-  // useEffect(() => {
-
-    // //Model Display Setup
-    // let listRef = ref(storage, 'gs://view-5a6a6.appspot.com/')
-    // let urlList = []
-    // let buttonList = []
-
-    // //Model Mapping Setup
-    // listAll(listRef)
-    // .then((res) => {
-    //   // console.log(res)
-    //   setAllItems(res.items)
-    //   console.log(res.items, 'this res items')
-    //   console.log(allItems, 'allItems array')
-    //   res.items.forEach((itemRef) => {
-    //     // console.log(itemRef)
-    //     getDownloadURL(ref(storage, itemRef))
-    //     .then((url) => {
-    //       console.log(url, 'model url')
-    //       urlList.push(url)
-    //       models.map((m) => {
-
-    //         return (
-    //             <div><model-viewer
-    //               className='card'
-    //               src={`${m}`}
-    //               camera-controls
-    //               auto-rotate
-    //               autoplay='true'
-    //             ></model-viewer></div>
-    //       )
-    //       });    
-    // })
-    
-    // .catch((error) => {
-    // });
-    //   })
-    //   console.log(urlList, 'url List')
-    //   setModels(urlList)
-    //   setDisplay(models)
-    // })
-    // console.log(listRef)
-    // setLoaded(true)
-
-  //   let shipLink = getDownloadURL(ref(storage, 'gs://view-5a6a6.appspot.com/egx.glb'))
-  // .then((url) => {
-  //   // console.log(url)
-  //   setModelRef(url)
-  // })
-  // .catch((error) => {
-  // });
-
-  // }, [])
-
-  // const buttons = models.map((model, index) => {
-  //   return(
-  //     <button onClick={(event)=>{event.preventDefault()
-  //     setDisplay(models)}}>{index}</button>
-  //   )
-  // })
+  // function handleDelete () {
+  // }
 
   return (
     <div>
       {/* { models.length &&  */}
       <><div>
-          <input></input>
-          <input></input>
-          <input></input>
+          <input className='input'></input>
+          <input className='input'></input>
+          <input type='file' className='input'></input>
           <button></button>
         </div>
-        <div className='card'>
-        {/* <model-viewer
+        {/* <div className='card'>
+        {displayList}
+        </div> */}
+        {displayList}
+        {/* <div className='card'>
+        <model-viewer
         className='card'
-        src={display}
+        src={models[0]}
         camera-controls
         auto-rotate
         autoplay='true'
-    ></model-viewer> */}
-    {displayList}
+    ></model-viewer>
     </div>
+    <div className='card'>
+        <model-viewer
+        className='card'
+        src={models[1]}
+        camera-controls
+        auto-rotate
+        autoplay='true'
+    ></model-viewer>
+    </div>
+    <div className='card'>
+        <model-viewer
+        className='card'
+        src={models[2]}
+        camera-controls
+        auto-rotate
+        autoplay='true'
+    ></model-viewer>
+    </div> */}
     </>
 {/* } */}
     </div>
