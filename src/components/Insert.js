@@ -64,6 +64,16 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
           <input type='file' />
           <button type='submit'>Upload</button>
           </form>
+          {
+            !input &&
+            <div className='outerbar'>
+              <div className='innerbar' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
+            </div>
+          }
+          {
+            input &&
+            <img src={input} alt='uploaded file' height={200} />
+          }
         </div>
         {displayList}
     </>
