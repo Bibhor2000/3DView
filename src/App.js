@@ -54,9 +54,9 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Link to='/'>Home</Link>
-        <Link to='/Insert'>Insert Models</Link>
-        <Link to='/Docs'>Model Docs</Link>
+        <Link to='/' className='App-link'>Home</Link>
+        <Link to='/Insert' className='App-link'>Insert Models</Link>
+        <Link to='/Docs' className='App-link'>Model Docs</Link>
       </div>
       <Routes>
         <Route path='/Insert' element={<Insert storage={storage} database={database} modelRef={modelRef} models={models} allItems={allItems} display={display} setDisplay={setDisplay} setModels={setModels} setAllItems={setAllItems}/>}/>

@@ -16,7 +16,7 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
     
     return (
         <div>
-          <button className='App-button'>X</button>
+          <button className='App-delete-button'>X</button>
           <div className='card' id={index}>
             <model-viewer
             src={m}
