@@ -9,12 +9,11 @@ import { ModelViewerElement } from '@google/model-viewer';
 
 function Insert ({storage, database, modelRef, models, allItems, display, setDisplay, setModels, setAllItems}) {
 
-  console.log(models)
   const [input, setInput] = useState(null);
   const [progresspercent, setProgresspercent] = useState(0);
 
   const displayList = models.map((m, index) => {
-    console.log(m)
+    
     return (
         <div>
           <div className='card' id={index}>

@@ -1,10 +1,13 @@
-//steps to make the firebase storage files accessible to the model component
-setting up storage in firebase JS and exporting an assigned variable
-importing the variable into app js then setting its 
+//Next Steps: Delete Function Task
+Create a function for deleting files
+In the function make a ref that will have a path in a string literal
+In the ref add functionality so that the delete path is unique to each generated model
+
 
 //Next Steps to take with only Cloud Storage
 Uploading files with Cloud Storage & built-in uploadBytes function
 Deleting files with Cloud Storage & built-in deleteObject function on the click of a button
+
 
 //Next Steps to take with only Realtime database
 Creating a function that will add names from the inputs to the database

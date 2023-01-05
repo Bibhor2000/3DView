@@ -37,31 +37,22 @@ function App() {
 
     listAll (listRef)
     .then((res) => {
-      // console.log(res)
       setAllItems(res.items)
-      console.log(res.items, 'this res items')
-      console.log(allItems, 'allItems array')
       res.items.forEach((itemRef) => {
-        // console.log(itemRef)
         getDownloadURL(ref(storage, itemRef))
         .then((url) => {
-          console.log(url, 'model url')
           urlList.push(url)
           setLoaded(true)
           setModels(urlList)
           setDisplay(models)
-          
       })
     })
   })}
-
-  // modelDownload()
 
   useEffect(() => {modelDownload()}, [loaded])
 
   return (
     <div className="App">
-      {/* <Model/> */}
       <div>
         <Link to='/'>Home</Link>
         <Link to='/Insert'>Insert Models</Link>
