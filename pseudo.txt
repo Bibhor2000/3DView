@@ -2,7 +2,7 @@
 Create a function for deleting files
 In the function make a ref that will have a path in a string literal
 In the ref add functionality so that the delete path is unique to each generated model
-
+You can have the delete path 
 
 //Next Steps to take with only Cloud Storage
 Uploading files with Cloud Storage & built-in uploadBytes function

@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# 3D-View App
+### Creator:
+Bibhor Gurung
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Links
+- [Deployed Front-end](https://3d-view.vercel.app/)
 
-In the project directory, you can run:
 
-### `npm start`
+## Technologies used for this app
+- [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)]()
+- [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://html.com/)
+- [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+- [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Deployment Service:
+Vercel was used to deploy this app.
+![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge) 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Overview
 
-### `npm run build`
+| Directories | Description | 
+| --- | :---: |  
+| Components | This directory currently holds two files Docs and Insert, Docs will contain instructions and any information regarding the app and Insert is where you an view and insert your 3D models  | 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Time Frames
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| AppJS | H | 8hrs| 56hrs(Initially setup was done in InsertJS) | 56hrs |
+| InsertJS | H | 8hrs | 2hrs | 58hr |
+| DocsJS | H | 1hr | 1hr | 59hrs | 
+| Total | H | 17hrs| 59hrs | 59hrs |
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Issues and Resolutions
+- W
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
+1. Fork and clone this repository
+2. `cd` into that repository
+3. Run `npm i` to download all required dependencies
+4. Run `npm start` to run localhost
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Wireframes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## MVP
+- As a user, I want to be able to add bookmarks to useful coding websites
+- As A User, I want to be able to add useful coding websites
+- As a user I want to be able to see description of these websites
+- As a user, I want to be able to see tags associated with the website to help find what I am looking for
+- As a user, I want to be able to like or dislike a website
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Code Snippet (For our seed file)
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## What to add in the future...
+- A
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Resources:
+- [Upload Function from Firebase](https://blog.logrocket.com/firebase-cloud-storage-firebase-v9-react/)
+- [Gradient Background](https://codeconvey.com/css-background-linear-gradient-animation/)

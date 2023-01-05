@@ -1,7 +1,7 @@
 import '@google/model-viewer'
 import '../App.css'
 import {firebase, initializeApp} from 'firebase/app';
-import {getDownloadURL, getStorage, ref, listAll, uploadBytesResumable} from 'firebase/storage';
+import {getDownloadURL, getStorage, ref, listAll, uploadBytesResumable, deleteObject} from 'firebase/storage';
 import {getDatabase} from 'firebase/database';
 import { useState, useEffect } from 'react';
 import { ModelViewerElement } from '@google/model-viewer';
@@ -16,6 +16,7 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
     
     return (
         <div>
+          <button className='App-button'>X</button>
           <div className='card' id={index}>
             <model-viewer
             src={m}
@@ -51,8 +52,14 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
     );
   }
 
-  // function handleDelete () {
-  // }
+  function handleDelete () {
+    const deleteRef = ref(storage, ``);
+    deleteObject(deleteRef).then(() => {
+
+    }).catch((error) => {
+      alert(error);
+    });
+  }
 
   return (
     <div>
@@ -60,8 +67,8 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
       <>
         <div>
           <form onSubmit={handleUpload} className='form'>
-          <input type='file' />
-          <button type='submit'>Upload</button>
+          <input type='file' className='App-input'/>
+          <button type='submit' className='App-button'>Upload</button>
           </form>
           {
             !input &&
