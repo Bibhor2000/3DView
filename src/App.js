@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import {firebase, initializeApp} from 'firebase/app';
+import {initializeApp} from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import {getDownloadURL, getStorage, ref, listAll} from 'firebase/storage';
+import {getFirestore} from 'firebase/firestore/lite';
 import {getDatabase} from 'firebase/database';
 import { useState, useEffect } from 'react';
 import React, {Component} from 'react';
@@ -20,6 +22,7 @@ const firebaseConfig = initializeApp ({
   measurementId: "G-SW50LTRLHN",
   rules_version: "2"
 });
+
 
 function App() {
 
@@ -57,6 +60,11 @@ function App() {
         <Link to='/' className='App-link'>Home</Link>
         <Link to='/Insert' className='App-link'>Insert Models</Link>
         <Link to='/Docs' className='App-link'>Model Docs</Link>
+      </div>
+      <div className='container'>
+        <div className='animate one'>
+          <span>3</span><span>D</span><span>M</span><span>o</span><span>d</span><span>e</span><span>l</span><span>V</span><span>i</span><span>e</span><span>w</span><span>e</span><span>r</span>
+        </div>
       </div>
       <Routes>
         <Route path='/Insert' element={<Insert storage={storage} database={database} modelRef={modelRef} models={models} allItems={allItems} display={display} setDisplay={setDisplay} setModels={setModels} setAllItems={setAllItems}/>}/>

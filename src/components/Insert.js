@@ -1,7 +1,7 @@
 import '@google/model-viewer'
 import '../App.css'
 import {firebase, initializeApp} from 'firebase/app';
-import {getDownloadURL, getStorage, ref, listAll, uploadBytesResumable, deleteObject} from 'firebase/storage';
+import {getDownloadURL, getStorage, getMetadata, ref, listAll, uploadBytesResumable, deleteObject} from 'firebase/storage';
 import {getDatabase} from 'firebase/database';
 import { useState, useEffect } from 'react';
 import { ModelViewerElement } from '@google/model-viewer';
@@ -13,21 +13,21 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
   const [progresspercent, setProgresspercent] = useState(0);
 
   const displayList = models.map((m, index) => {
-    
-    return (
-        <div>
-          <button className='App-delete-button'>X</button>
-          <div className='card' id={index}>
-            <model-viewer
-            src={m}
-            poster='./piranalogo.png'
-            camera-controls
-            auto-rotate
-            autoplay='true'
-            ></model-viewer>
+  
+        return (
+          <div>
+            <button className='App-delete-button' onClick={handleDelete}>X</button>
+            <div className='card' id={index}>
+              <model-viewer
+              src={m}
+              poster='./piranalogo.png'
+              camera-controls
+              auto-rotate
+              autoplay='true'
+              ></model-viewer>
+            </div>
           </div>
-        </div>
-  )
+    )
   });
 
 
@@ -53,12 +53,34 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
   }
 
   function handleDelete () {
-    const deleteRef = ref(storage, ``);
-    deleteObject(deleteRef).then(() => {
 
-    }).catch((error) => {
-      alert(error);
+    const db = getDatabase()
+    // Get a reference to the location of the files you want to list
+    let filesRef = ref(db).child('/');
+    console.log(filesRef)
+    // Use the once() method to get the list of files
+    listAll(filesRef)
+      .then((res) => {
+      console.log(res,'res')
+    res.items.forEach((itemRef) => {
+      console.log(itemRef)
     });
+    }).catch((error) => {
+      console.log(error)
+    });
+
+    const storage = getStorage();
+
+    // Create a reference to the file to delete
+    const desertRef = ref(storage, 'gs://view-5a6a6.appspot.com/assegai');
+
+    // Delete the file
+    deleteObject(desertRef).then(() => {
+    // File deleted successfully
+    }).catch((error) => {
+    // Uh-oh, an error occurred!
+    });
+
   }
 
   return (

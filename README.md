@@ -72,3 +72,4 @@ Vercel was used to deploy this app.
 ## Resources:
 - [Upload Function from Firebase](https://blog.logrocket.com/firebase-cloud-storage-firebase-v9-react/)
 - [Gradient Background](https://codeconvey.com/css-background-linear-gradient-animation/)
+- [Title CSS Animation](https://codeconvey.com/css-text-animation-examples-with-code/)
