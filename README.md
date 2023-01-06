@@ -65,7 +65,7 @@ Component Hierarchy:
 - Functionality for drag, & zoom gestures for viewing displayed models
 
 
-### Code Snippet (For our seed file)
+### Code Snippet
 
 ```
 const displayList = models.map((m, index) => {
