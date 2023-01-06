@@ -78,6 +78,36 @@ body {
   font-size: xx-large;
 }
 
+.App-heading {
+  color: white;
+  margin: 10px;
+  margin-top: -10%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: xx-large;
+}
+
+.App-paragraph {
+  color: white;
+  margin: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+
+.App-heading2 {
+	color: white;
+	margin: 10px;
+	margin-top: 5%;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: xx-large;
+  }
+  
+  .App-paragraph2 {
+	color: white;
+	margin: 10px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: large;
+  }
+
 .container {
 	width: 100%;
 	margin: auto;

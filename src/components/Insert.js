@@ -20,7 +20,7 @@ function Insert ({storage, database, modelRef, models, allItems, display, setDis
             <div className='card' id={index}>
               <model-viewer
               src={m}
-              poster='./piranalogo.png'
+              poster='./firebaselogo.png'
               camera-controls
               auto-rotate
               autoplay='true'
