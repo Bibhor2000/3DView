@@ -51,11 +51,10 @@ Bibhor Gurung
 
 
 ## Project Sketches
-Wireframe:
 ![PXL_20221222_212120500](https://media.git.generalassemb.ly/user/45902/files/13b6fe3e-4a02-43e1-97ae-92d1e473cf33)
-ERD & Req/Res Diagram:
+
 ![PXL_20221222_212103487](https://media.git.generalassemb.ly/user/45902/files/7f67b533-3adc-4edd-8a70-f921332a1ccf)
-Component Hierarchy:
+
 ![PXL_20221222_212111733](https://media.git.generalassemb.ly/user/45902/files/0232ecb5-e2be-4dda-a0be-59b8d21c93ea)
 
 
